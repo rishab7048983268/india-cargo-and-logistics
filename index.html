@@ -3,27 +3,120 @@
 <head>
 <meta charset="UTF-8">
 <title>India Cargo & Logistics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-body {margin:0;font-family:Arial;background:#f4f4f4;}
-header {background:#0d6efd;color:white;padding:20px;text-align:center;}
-nav {background:#003f88;padding:10px;text-align:center;}
-nav a {color:white;margin:15px;text-decoration:none;font-weight:bold;}
-section {padding:30px;text-align:center;}
-form {max-width:400px;margin:auto;}
-input, textarea {width:100%;padding:10px;margin:8px 0;}
-button {background:#0d6efd;color:white;padding:10px;border:none;width:100%;}
-.whatsapp {
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+
+body{background:#f5f7fa;}
+
+header{
+background:linear-gradient(90deg,#0d6efd,#003f88);
 color:white;
-padding:15px;
-border-radius:50%;
-text-decoration:none;
-font-size:20px;
+padding:20px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
-footer {background:#111;color:white;text-align:center;padding:15px;margin-top:20px;}
+
+header h1{font-size:22px;}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+height:400px;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
+background-size:cover;
+background-position:center;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h2{font-size:40px;margin-bottom:15px;}
+.hero p{font-size:18px;margin-bottom:20px;}
+
+.hero button{
+padding:12px 25px;
+background:#ffcc00;
+border:none;
+font-weight:bold;
+cursor:pointer;
+}
+
+.services{
+display:flex;
+justify-content:space-around;
+padding:50px 10%;
+background:white;
+}
+
+.service-box{
+background:#f1f1f1;
+padding:25px;
+width:30%;
+text-align:center;
+border-radius:8px;
+transition:0.3s;
+}
+
+.service-box:hover{
+background:#0d6efd;
+color:white;
+transform:translateY(-5px);
+}
+
+.booking{
+padding:50px 10%;
+text-align:center;
+}
+
+form{
+max-width:500px;
+margin:auto;
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+background:#0d6efd;
+color:white;
+padding:12px;
+border:none;
+width:100%;
+font-size:16px;
+cursor:pointer;
+border-radius:5px;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+
+@media(max-width:768px){
+.services{flex-direction:column;}
+.service-box{width:100%;margin-bottom:20px;}
+}
 </style>
 </head>
 
@@ -31,21 +124,35 @@ footer {background:#111;color:white;text-align:center;padding:15px;margin-top:20
 
 <header>
 <h1>India Cargo & Logistics (ICAL)</h1>
-<p>Fast • Secure • Reliable Courier Services</p>
-</header>
-
 <nav>
 <a href="#">Home</a>
-<a href="#booking">Book Shipment</a>
-<a href="#contact">Contact</a>
+<a href="#services">Services</a>
+<a href="#booking">Book</a>
 </nav>
+</header>
 
-<section>
-<h2>Our Services</h2>
-<p>Domestic Courier | Cargo Shipping | E-commerce Delivery</p>
+<section class="hero">
+<h2>Fast & Secure Delivery</h2>
+<p>Trusted Courier Service in Delhi & Across India</p>
+<button onclick="document.getElementById('booking').scrollIntoView()">Book Now</button>
 </section>
 
-<section id="booking">
+<section class="services" id="services">
+<div class="service-box">
+<h3>🚚 Domestic Courier</h3>
+<p>Safe & Fast Delivery Across India</p>
+</div>
+<div class="service-box">
+<h3>📦 Cargo Shipping</h3>
+<p>Bulk & Commercial Shipments</p>
+</div>
+<div class="service-box">
+<h3>⚡ Same Day Pickup</h3>
+<p>Quick Pickup Service in Delhi</p>
+</div>
+</section>
+
+<section class="booking" id="booking">
 <h2>Book Your Shipment</h2>
 <form>
 <input type="text" placeholder="Sender Name" required>
@@ -57,16 +164,9 @@ footer {background:#111;color:white;text-align:center;padding:15px;margin-top:20
 </form>
 </section>
 
-<section id="contact">
-<h2>Contact Us</h2>
-<p>📍 Uttam Nagar, Delhi</p>
-<p>📞 7048983268</p>
-</section>
-
-<a class="whatsapp" href="https://wa.me/917048983268" target="_blank">💬</a>
-
 <footer>
-<p>© 2026 India Cargo & Logistics | All Rights Reserved</p>
+<p>📍 Uttam Nagar, Delhi | 📞 7048983268</p>
+<p>© 2026 India Cargo & Logistics</p>
 </footer>
 
 </body>
