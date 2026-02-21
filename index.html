@@ -1,134 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>India Cargo & Logistics (ICAL)</title>
+<header style="background:#0d1b2a;padding:15px 40px;display:flex;align-items:center;justify-content:space-between;color:white;">
+    
+    <div style="display:flex;align-items:center;">
+        <img src="logo.png" style="height:70px;margin-right:15px;">
+        <div>
+            <h2 style="margin:0;">INDIA CARGO & LOGISTICS</h2>
+            <p style="margin:0;font-size:14px;color:#ccc;">Fast • Secure • Reliable</p>
+        </div>
+    </div>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <nav>
+        <a href="#" style="color:white;margin:0 15px;text-decoration:none;">Home</a>
+        <a href="#" style="color:white;margin:0 15px;text-decoration:none;">Track</a>
+        <a href="#" style="color:white;margin:0 15px;text-decoration:none;">Contact</a>
+    </nav>
 
-<style>
-body{
-    margin:0;
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-    color:white;
-    text-align:center;
-}
-
-header{
-    padding:20px;
-    font-size:22px;
-    font-weight:600;
-}
-
-.hero{
-    padding:60px 20px;
-}
-
-.hero h1{
-    font-size:38px;
-    margin-bottom:10px;
-}
-
-.track-box{
-    background:white;
-    color:black;
-    padding:30px;
-    border-radius:15px;
-    width:90%;
-    max-width:400px;
-    margin:30px auto;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
-}
-
-input{
-    width:100%;
-    padding:12px;
-    margin-top:10px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    font-size:16px;
-}
-
-button{
-    width:100%;
-    padding:12px;
-    margin-top:15px;
-    border:none;
-    border-radius:8px;
-    background:#ff6b00;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-button:hover{
-    background:#e65c00;
-}
-
-#result{
-    margin-top:15px;
-    font-weight:600;
-}
-
-footer{
-    margin-top:50px;
-    padding:20px;
-    font-size:14px;
-    opacity:0.8;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-India Cargo & Logistics (ICAL)
 </header>
-
-<div class="hero">
-<h1>Track Your Shipment</h1>
-<p>Fast • Safe • Reliable Delivery</p>
-</div>
-
-<div class="track-box">
-<input type="text" id="trackInput" placeholder="Enter Tracking Number">
-<button onclick="trackParcel()">Track Now</button>
-<p id="result"></p>
-</div>
-
-<footer>
-© 2026 ICAL Courier Services
-</footer>
-
-<script>
-async function trackParcel() {
-    let trackingNumber = document.getElementById("trackInput").value.trim();
-    let sheetID = "1IZz5xlj-YrEXIGrP93MlENjebGjq3sF_TNPqVauvAeQ";
-    let url = `https://docs.google.com/spreadsheets/d/${sheetID}/export?format=csv`;
-
-    let response = await fetch(url);
-    let data = await response.text();
-
-    let rows = data.split("\n");
-    let found = false;
-
-    for (let i = 1; i < rows.length; i++) {
-        let cols = rows[i].split(",");
-        if (cols[0] === trackingNumber) {
-            document.getElementById("result").innerHTML =
-                `✅ Status: ${cols[5]} <br> 📍 Location: ${cols[6]} <br> 📅 Date: ${cols[7]}`;
-            found = true;
-            break;
-        }
-    }
-
-    if (!found) {
-        document.getElementById("result").innerHTML = "❌ Tracking Number Not Found";
-    }
-}
-</script>
-
-</body>
-</html>
