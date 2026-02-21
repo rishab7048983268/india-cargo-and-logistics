@@ -1,46 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>India Cargo & Logistics (ICAL)</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body { font-family: Arial; margin: 0; background:#f4f6f9; }
-        header { background:#0a1f44; color:white; padding:15px; text-align:center; }
-        nav { background:#ff6600; padding:10px; text-align:center; }
-        nav a { color:white; margin:15px; text-decoration:none; font-weight:bold; }
-        .section { padding:40px; text-align:center; }
-        input { padding:10px; width:250px; }
-        button { padding:10px 20px; background:#ff6600; color:white; border:none; cursor:pointer; }
-        footer { background:#0a1f44; color:white; padding:15px; text-align:center; }
-    </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>India Cargo & Logistics (ICAL)</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    text-align:center;
+}
+
+header{
+    padding:20px;
+    font-size:22px;
+    font-weight:600;
+}
+
+.hero{
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.track-box{
+    background:white;
+    color:black;
+    padding:30px;
+    border-radius:15px;
+    width:90%;
+    max-width:400px;
+    margin:30px auto;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:8px;
+    background:#ff6b00;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#e65c00;
+}
+
+#result{
+    margin-top:15px;
+    font-weight:600;
+}
+
+footer{
+    margin-top:50px;
+    padding:20px;
+    font-size:14px;
+    opacity:0.8;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h2>India Cargo & Logistics (ICAL)</h2>
-    <p>Fast | Safe | Reliable Courier Services</p>
+India Cargo & Logistics (ICAL)
 </header>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#tracking">Tracking</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<div class="section" id="tracking">
-    <h2>Track Your Shipment</h2>
-    <input type="text" id="trackInput" placeholder="Enter Tracking Number">
-    <button onclick="trackParcel()">Track</button>
-    <p id="result"></p>
+<div class="hero">
+<h1>Track Your Shipment</h1>
+<p>Fast • Safe • Reliable Delivery</p>
 </div>
 
-<div class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: support@icalcourier.in</p>
+<div class="track-box">
+<input type="text" id="trackInput" placeholder="Enter Tracking Number">
+<button onclick="trackParcel()">Track Now</button>
+<p id="result"></p>
 </div>
 
 <footer>
-    © 2026 India Cargo & Logistics (ICAL)
+© 2026 ICAL Courier Services
 </footer>
 
 <script>
