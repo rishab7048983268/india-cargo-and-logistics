@@ -1,130 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>India Cargo & Logistics (ICAL)</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-        }
-        header {
-            background: #0a1f44;
-            color: white;
-            padding: 15px 0;
-            text-align: center;
-        }
-        nav {
-            background: #ff6600;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 15px;
-            font-weight: bold;
-        }
-        .hero {
-            background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
-            background-size: cover;
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 40px;
-        }
-        .section {
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .card {
-            background: white;
-            margin: 15px;
-            padding: 20px;
-            width: 250px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 10px;
-        }
-        footer {
-            background: #0a1f44;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-        input[type=text] {
-            padding: 10px;
-            width: 250px;
-        }
-        button {
-            padding: 10px 20px;
-            background: #ff6600;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
+<script>
+async function trackParcel() {
+    let trackingNumber = document.getElementById("trackInput").value.trim();
+    let sheetID = "1IZz5xlj-YrEXIGrP93MlENjebGjq3sF_TNPqVauvAeQ";
+    let url = `https://docs.google.com/spreadsheets/d/${sheetID}/export?format=csv`;
 
-<header>
-    <h2>India Cargo & Logistics (ICAL)</h2>
-    <p>Fast | Safe | Reliable Courier Services</p>
-</header>
+    let response = await fetch(url);
+    let data = await response.text();
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="#tracking">Tracking</a>
-    <a href="#contact">Contact</a>
-</nav>
+    let rows = data.split("\n");
+    let found = false;
 
-<div class="hero">
-    <h1>Delivering Trust Across India</h1>
-    <p>Your Parcel, Our Responsibility</p>
-</div>
+    for (let i = 1; i < rows.length; i++) {
+        let cols = rows[i].split(",");
+        if (cols[0] === trackingNumber) {
+            document.getElementById("result").innerHTML =
+                `✅ Status: ${cols[5]} <br> 📍 Location: ${cols[6]} <br> 📅 Date: ${cols[7]}`;
+            found = true;
+            break;
+        }
+    }
 
-<div class="section" id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Air Cargo</h3>
-            <p>Fast air delivery across India.</p>
-        </div>
-        <div class="card">
-            <h3>Surface Transport</h3>
-            <p>Safe and affordable ground shipping.</p>
-        </div>
-        <div class="card">
-            <h3>Express Delivery</h3>
-            <p>Same day and next day delivery options.</p>
-        </div>
-    </div>
-</div>
-
-<div class="section" id="tracking">
-    <h2>Track Your Shipment</h2>
-    <input type="text" placeholder="Enter Tracking Number">
-    <button>Track</button>
-    <p>(Tracking system coming soon)</p>
-</div>
-
-<div class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: support@icalcourier.in</p>
-    <p>Phone: +91 XXXXXXXXXX</p>
-</div>
-
-<footer>
-    <p>© 2026 India Cargo & Logistics (ICAL). All Rights Reserved.</p>
-</footer>
-
-</body>
-</html>
+    if (!found) {
+        document.getElementById("result").innerHTML = "❌ Tracking Number Not Found";
+    }
+}
+</script>
