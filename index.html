@@ -1,188 +1,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>India Cargo & Logistics</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-
-body{background:#0f172a;color:white;}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:#111827;
-position:sticky;
-top:0;
-}
-
-header h1{font-size:20px;color:#38bdf8;}
-
-nav a{
-color:white;
-margin-left:25px;
-text-decoration:none;
-font-weight:500;
-transition:0.3s;
-}
-
-nav a:hover{color:#38bdf8;}
-
-.hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-background:linear-gradient(135deg,#0f172a,#1e293b);
-}
-
-.hero h2{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.hero span{color:#38bdf8;}
-
-.hero p{
-max-width:600px;
-opacity:0.8;
-margin-bottom:30px;
-}
-
-.hero button{
-background:#38bdf8;
-color:#000;
-padding:14px 30px;
-border:none;
-border-radius:30px;
-font-weight:600;
-cursor:pointer;
-transition:0.3s;
-}
-
-.hero button:hover{
-background:white;
-}
-
-.services{
-display:flex;
-justify-content:center;
-gap:30px;
-padding:80px 8%;
-flex-wrap:wrap;
-}
-
-.card{
-background:#1e293b;
-padding:30px;
-width:280px;
-border-radius:15px;
-transition:0.4s;
-text-align:center;
-}
-
-.card:hover{
-transform:translateY(-10px);
-background:#38bdf8;
-color:black;
-}
-
-.booking{
-padding:80px 8%;
-text-align:center;
-background:#111827;
-}
-
-.booking h2{margin-bottom:30px;}
-
-form{
-max-width:500px;
-margin:auto;
-}
-
-input, textarea{
-width:100%;
-padding:14px;
-margin:10px 0;
-border:none;
-border-radius:8px;
-}
-
-form button{
-background:#38bdf8;
-color:black;
-font-weight:600;
-border-radius:8px;
-}
-
-footer{
-text-align:center;
-padding:25px;
-background:#0f172a;
-opacity:0.7;
-}
-</style>
+    <title>India Cargo & Logistics (ICAL)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+        }
+        header {
+            background: #0a1f44;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav {
+            background: #ff6600;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+        .hero {
+            background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
+            background-size: cover;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 40px;
+        }
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            background: white;
+            margin: 15px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        footer {
+            background: #0a1f44;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        input[type=text] {
+            padding: 10px;
+            width: 250px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #ff6600;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-<h1>ICAL</h1>
-<nav>
-<a href="#">Home</a>
-<a href="#services">Services</a>
-<a href="#booking">Book</a>
-</nav>
+    <h2>India Cargo & Logistics (ICAL)</h2>
+    <p>Fast | Safe | Reliable Courier Services</p>
 </header>
 
-<section class="hero">
-<h2>Fast & Secure <span>Logistics</span></h2>
-<p>India Cargo & Logistics provides reliable courier and cargo services across Delhi and India.</p>
-<button onclick="document.getElementById('booking').scrollIntoView()">Book Shipment</button>
-</section>
+<nav>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#tracking">Tracking</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-<section class="services" id="services">
-<div class="card">
-<h3>🚚 Domestic Courier</h3>
-<p>Fast & safe parcel delivery</p>
+<div class="hero">
+    <h1>Delivering Trust Across India</h1>
+    <p>Your Parcel, Our Responsibility</p>
 </div>
 
-<div class="card">
-<h3>📦 Cargo Shipping</h3>
-<p>Bulk & commercial shipments</p>
+<div class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">
+            <h3>Air Cargo</h3>
+            <p>Fast air delivery across India.</p>
+        </div>
+        <div class="card">
+            <h3>Surface Transport</h3>
+            <p>Safe and affordable ground shipping.</p>
+        </div>
+        <div class="card">
+            <h3>Express Delivery</h3>
+            <p>Same day and next day delivery options.</p>
+        </div>
+    </div>
 </div>
 
-<div class="card">
-<h3>⚡ Express Delivery</h3>
-<p>Same day pickup service</p>
+<div class="section" id="tracking">
+    <h2>Track Your Shipment</h2>
+    <input type="text" placeholder="Enter Tracking Number">
+    <button>Track</button>
+    <p>(Tracking system coming soon)</p>
 </div>
-</section>
 
-<section class="booking" id="booking">
-<h2>Book Your Shipment</h2>
-<form>
-<input type="text" placeholder="Sender Name" required>
-<input type="tel" placeholder="Phone Number" required>
-<textarea placeholder="Pickup Address"></textarea>
-<textarea placeholder="Delivery Address"></textarea>
-<input type="text" placeholder="Parcel Weight">
-<button type="submit">Submit Booking</button>
-</form>
-</section>
+<div class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@icalcourier.in</p>
+    <p>Phone: +91 XXXXXXXXXX</p>
+</div>
 
 <footer>
-📍 Uttam Nagar, Delhi | 📞 7048983268  
-<br>
-© 2026 India Cargo & Logistics
+    <p>© 2026 India Cargo & Logistics (ICAL). All Rights Reserved.</p>
 </footer>
 
 </body>
