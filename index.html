@@ -1,3 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>India Cargo & Logistics (ICAL)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial; margin: 0; background:#f4f6f9; }
+        header { background:#0a1f44; color:white; padding:15px; text-align:center; }
+        nav { background:#ff6600; padding:10px; text-align:center; }
+        nav a { color:white; margin:15px; text-decoration:none; font-weight:bold; }
+        .section { padding:40px; text-align:center; }
+        input { padding:10px; width:250px; }
+        button { padding:10px 20px; background:#ff6600; color:white; border:none; cursor:pointer; }
+        footer { background:#0a1f44; color:white; padding:15px; text-align:center; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>India Cargo & Logistics (ICAL)</h2>
+    <p>Fast | Safe | Reliable Courier Services</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#tracking">Tracking</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="section" id="tracking">
+    <h2>Track Your Shipment</h2>
+    <input type="text" id="trackInput" placeholder="Enter Tracking Number">
+    <button onclick="trackParcel()">Track</button>
+    <p id="result"></p>
+</div>
+
+<div class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@icalcourier.in</p>
+</div>
+
+<footer>
+    © 2026 India Cargo & Logistics (ICAL)
+</footer>
+
 <script>
 async function trackParcel() {
     let trackingNumber = document.getElementById("trackInput").value.trim();
@@ -25,3 +70,6 @@ async function trackParcel() {
     }
 }
 </script>
+
+</body>
+</html>
