@@ -1,17 +1,168 @@
-<header style="background:#0d1b2a;padding:15px 40px;display:flex;align-items:center;justify-content:space-between;color:white;">
-    
-    <div style="display:flex;align-items:center;">
-        <img src="logo.png" style="height:70px;margin-right:15px;">
-        <div>
-            <h2 style="margin:0;">INDIA CARGO & LOGISTICS</h2>
-            <p style="margin:0;font-size:14px;color:#ccc;">Fast • Secure • Reliable</p>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICal Express - Your Time Is Valuable For Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+    }
+    header {
+      background: linear-gradient(90deg, #0b5ed7, #dc3545);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 16px;
+    }
+    nav {
+      background: #222;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      padding: 50px;
+      text-align: center;
+      background: white;
+    }
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .hero button {
+      padding: 12px 20px;
+      margin: 10px;
+      border: none;
+      background: #0b5ed7;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .section {
+      padding: 40px;
+      background: white;
+      margin: 20px;
+      border-radius: 8px;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .btn {
+      background: #dc3545;
+      color: white;
+      padding: 12px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
 
-    <nav>
-        <a href="#" style="color:white;margin:0 15px;text-decoration:none;">Home</a>
-        <a href="#" style="color:white;margin:0 15px;text-decoration:none;">Track</a>
-        <a href="#" style="color:white;margin:0 15px;text-decoration:none;">Contact</a>
-    </nav>
-
+<header>
+  <h1>ICal Express</h1>
+  <p>Your Time Is Valuable For Us</p>
 </header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#tracking">Tracking</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+  <h2>Fast & Reliable Courier Service Across India</h2>
+  <p>Book Pickup • Track Shipment • Fast Delivery</p>
+  <button onclick="alert('WhatsApp Booking Coming Soon')">Book Pickup</button>
+  <button onclick="alert('Tracking Feature Coming Soon')">Track Order</button>
+</section>
+
+<section class="section" id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Express Delivery</h3>
+      <p>Fast delivery across India</p>
+    </div>
+    <div class="card">
+      <h3>Air Cargo</h3>
+      <p>Urgent shipments via air</p>
+    </div>
+    <div class="card">
+      <h3>Surface Cargo</h3>
+      <p>Affordable shipping option</p>
+    </div>
+    <div class="card">
+      <h3>Bulk Shipment</h3>
+      <p>Special rates for heavy parcels</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tracking">
+  <h2>Track Your Shipment</h2>
+  <input type="text" placeholder="Enter Tracking Number">
+  <button class="btn">Track</button>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact Us</h2>
+  <input type="text" placeholder="Your Name">
+  <input type="text" placeholder="Phone Number">
+  <textarea placeholder="Enter Pickup Details"></textarea>
+  <button class="btn">Submit</button>
+</section>
+
+<footer>
+  <p>© 2026 ICal Express | All Rights Reserved</p>
+</footer>
+
+
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/917048983268" target="_blank" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 18px;border-radius:50px;text-decoration:none;font-weight:bold;box-shadow:0 4px 10px rgba(0,0,0,0.3);">
+  WhatsApp Us
+</a>
+
+</body>
+</html>
